@@ -3,19 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Marriage Profile | Meghana</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
 
     <style>
 
         /* =====================================================
-           GLOBAL
+           GLOBAL RESET
         ===================================================== */
 
         * {
@@ -31,32 +44,34 @@
         body {
             font-family: "Montserrat", sans-serif;
             color: #fff8ed;
-            min-height: 100vh;
-            overflow-x: hidden;
 
             background:
                 radial-gradient(
-                    circle at 10% 10%,
-                    rgba(224, 179, 85, 0.18),
+                    circle at 15% 15%,
+                    rgba(220, 170, 75, 0.18),
                     transparent 25%
                 ),
                 radial-gradient(
-                    circle at 90% 20%,
-                    rgba(170, 55, 85, 0.25),
+                    circle at 85% 30%,
+                    rgba(150, 55, 75, 0.30),
                     transparent 30%
                 ),
                 radial-gradient(
-                    circle at 50% 85%,
-                    rgba(216, 153, 66, 0.13),
-                    transparent 32%
+                    circle at 50% 90%,
+                    rgba(210, 145, 65, 0.14),
+                    transparent 30%
                 ),
                 linear-gradient(
                     135deg,
-                    #1c0713 0%,
-                    #3a0e20 45%,
-                    #180710 100%
+                    #210b17,
+                    #3b101f 45%,
+                    #160812
                 );
+
+            min-height: 100vh;
+            overflow-x: hidden;
         }
+
 
         /* =====================================================
            ANIMATED BACKGROUND
@@ -66,59 +81,65 @@
             content: "";
             position: fixed;
             inset: 0;
+
             pointer-events: none;
-            z-index: 0;
+
+            opacity: 0.08;
 
             background-image:
                 radial-gradient(
                     circle,
-                    rgba(244, 212, 138, 0.8) 1px,
+                    #f4d48a 1px,
                     transparent 1px
                 ),
                 radial-gradient(
                     circle,
-                    rgba(255, 255, 255, 0.5) 1px,
+                    #ffffff 1px,
                     transparent 1px
                 );
 
             background-size:
-                95px 95px,
-                150px 150px;
+                80px 80px,
+                130px 130px;
 
-            opacity: 0.12;
+            animation: stars 18s linear infinite;
 
-            animation: starsMove 20s linear infinite;
+            z-index: 0;
         }
-
-        @keyframes starsMove {
-
-            0% {
-                background-position: 0 0, 0 0;
-            }
-
-            100% {
-                background-position: 95px 95px, -150px 150px;
-            }
-        }
-
-        /* Large ornamental glow */
 
         body::after {
             content: "❀";
+
             position: fixed;
+            top: 4%;
+            left: 3%;
 
-            top: -60px;
-            left: -30px;
+            font-size: 180px;
 
-            font-size: 220px;
+            color: rgba(232, 190, 107, 0.05);
 
-            color: rgba(232, 190, 107, 0.045);
-
-            transform: rotate(-25deg);
+            transform: rotate(-20deg);
 
             pointer-events: none;
+
             z-index: 0;
         }
+
+        @keyframes stars {
+
+            from {
+                background-position:
+                    0 0,
+                    0 0;
+            }
+
+            to {
+                background-position:
+                    80px 80px,
+                    -130px 130px;
+            }
+        }
+
 
         /* =====================================================
            FLOATING DECORATIONS
@@ -126,116 +147,130 @@
 
         .decoration {
             position: fixed;
-            z-index: 1;
 
             pointer-events: none;
 
-            color: rgba(238, 198, 117, 0.10);
+            z-index: 0;
 
-            animation: floating 8s ease-in-out infinite;
+            color: rgba(238, 198, 117, 0.12);
+
+            font-size: 90px;
+
+            animation:
+                float 7s ease-in-out infinite;
         }
 
         .flower1 {
-            top: 12%;
-            right: 2%;
-            font-size: 100px;
+            top: 15%;
+            right: 3%;
         }
 
         .flower2 {
-            bottom: 10%;
-            left: 1%;
-            font-size: 120px;
+            bottom: 12%;
+            left: 2%;
+
             animation-delay: 2s;
         }
 
         .flower3 {
             top: 55%;
             right: 1%;
-            font-size: 65px;
+
+            font-size: 60px;
+
             animation-delay: 4s;
         }
 
-        .flower4 {
-            top: 35%;
-            left: 2%;
-            font-size: 45px;
-            animation-delay: 1s;
-        }
-
-        @keyframes floating {
+        @keyframes float {
 
             0%,
             100% {
-                transform: translateY(0) rotate(0deg);
+                transform:
+                    translateY(0)
+                    rotate(0deg);
             }
 
             50% {
-                transform: translateY(-25px) rotate(10deg);
+                transform:
+                    translateY(-25px)
+                    rotate(10deg);
             }
         }
 
+
         /* =====================================================
-           PAGE
+           MAIN PAGE
         ===================================================== */
 
         .page {
             position: relative;
-            z-index: 2;
 
-            width: min(1120px, calc(100% - 40px));
+            z-index: 1;
+
+            width: 100%;
+            max-width: 1100px;
 
             margin: 35px auto;
+
+            padding: 15px;
         }
 
         .profile {
             position: relative;
+
             overflow: hidden;
 
-            border: 1px solid rgba(235, 193, 106, 0.55);
+            border:
+                1px solid
+                rgba(235, 193, 106, 0.55);
 
-            border-radius: 32px;
+            border-radius: 30px;
 
             background:
-                linear-gradient(
-                    145deg,
-                    rgba(62, 16, 34, 0.72),
-                    rgba(28, 7, 18, 0.72)
-                );
+                rgba(45, 11, 26, 0.65);
 
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(18px);
 
             box-shadow:
-                0 35px 100px rgba(0, 0, 0, 0.55),
-                inset 0 0 100px rgba(215, 163, 72, 0.035);
+                0 30px 100px rgba(0, 0, 0, 0.5),
+                inset 0 0 80px
+                rgba(215, 163, 72, 0.04);
         }
 
         .profile::before {
             content: "";
 
             position: absolute;
+
             inset: 12px;
 
-            border: 1px solid rgba(226, 181, 91, 0.20);
+            border:
+                1px solid
+                rgba(226, 181, 91, 0.22);
 
-            border-radius: 23px;
+            border-radius: 22px;
 
             pointer-events: none;
+
+            z-index: 5;
         }
+
 
         /* =====================================================
            HERO
         ===================================================== */
 
         .hero {
-            min-height: 680px;
+            min-height: 620px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             text-align: center;
 
-            padding: 80px 40px;
+            padding: 70px 30px;
 
             position: relative;
         }
@@ -245,84 +280,63 @@
 
             position: absolute;
 
-            width: 580px;
-            height: 580px;
+            width: 500px;
+            height: 500px;
 
             border-radius: 50%;
 
             background:
                 radial-gradient(
                     circle,
-                    rgba(224, 179, 85, 0.20),
-                    rgba(224, 179, 85, 0.05) 40%,
-                    transparent 70%
+                    rgba(221, 176, 83, 0.22),
+                    transparent 68%
                 );
 
             filter: blur(20px);
-
-            animation: heroGlow 6s ease-in-out infinite;
-        }
-
-        @keyframes heroGlow {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-
-            50% {
-                transform: scale(1.08);
-                opacity: 1;
-            }
         }
 
         .hero-content {
             position: relative;
-            z-index: 3;
+
+            z-index: 2;
 
             width: 100%;
         }
 
         .small-title {
-            font-size: 12px;
+            font-size: 13px;
 
-            letter-spacing: 7px;
-
-            text-transform: uppercase;
+            letter-spacing: 6px;
 
             color: #e7c77f;
+
+            text-transform: uppercase;
 
             margin-bottom: 25px;
         }
 
-        .ornament {
-            font-size: 25px;
-
-            letter-spacing: 14px;
-
-            color: #e4bd6a;
-
-            margin-bottom: 12px;
-        }
-
         .hero h1 {
-            font-family: "Cormorant Garamond", serif;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-            font-size: clamp(55px, 8vw, 100px);
-
-            line-height: 0.9;
+            font-size:
+                clamp(55px, 9vw, 110px);
 
             font-weight: 500;
+
+            line-height: 0.9;
 
             color: #f8e8c4;
 
             text-shadow:
-                0 5px 30px rgba(220, 175, 90, 0.20);
+                0 5px 30px
+                rgba(220, 175, 90, 0.2);
         }
 
         .hero-line {
-            width: 190px;
+            width: 180px;
+
             height: 1px;
 
             margin: 30px auto;
@@ -336,25 +350,35 @@
                 );
         }
 
-        /* =====================================================
-           PHOTO
-        ===================================================== */
+        .subtitle {
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 25px;
+
+            font-style: italic;
+
+            color: #e6c88b;
+        }
 
         .photo-wrapper {
-            width: 245px;
-            height: 295px;
+            width: 230px;
+            height: 280px;
 
             margin: 35px auto;
 
             padding: 7px;
 
-            border: 1px solid #d9b35c;
+            border:
+                1px solid
+                #d9b35c;
 
             border-radius:
-                130px
-                130px
-                40px
-                40px;
+                120px
+                120px
+                35px
+                35px;
 
             background:
                 linear-gradient(
@@ -365,26 +389,10 @@
                 );
 
             box-shadow:
-                0 0 50px rgba(225, 181, 82, 0.20),
-                0 25px 60px rgba(0, 0, 0, 0.45);
-
-            animation: photoGlow 5s ease-in-out infinite;
-        }
-
-        @keyframes photoGlow {
-
-            0%,
-            100% {
-                box-shadow:
-                    0 0 40px rgba(225, 181, 82, 0.16),
-                    0 25px 60px rgba(0, 0, 0, 0.45);
-            }
-
-            50% {
-                box-shadow:
-                    0 0 65px rgba(225, 181, 82, 0.28),
-                    0 25px 60px rgba(0, 0, 0, 0.45);
-            }
+                0 0 40px
+                rgba(225, 181, 82, 0.18),
+                0 20px 50px
+                rgba(0, 0, 0, 0.4);
         }
 
         .photo-wrapper img {
@@ -394,43 +402,38 @@
             object-fit: cover;
 
             border-radius:
-                125px
-                125px
-                34px
-                34px;
+                115px
+                115px
+                30px
+                30px;
 
-            border: 4px solid #2d0b1b;
+            border:
+                4px solid
+                #2d0b1b;
         }
 
-        .subtitle {
-            font-family: "Cormorant Garamond", serif;
+        .ornament {
+            font-size: 28px;
 
-            font-size: 25px;
+            color: #e4bd6a;
 
-            font-style: italic;
-
-            color: #e6c88b;
-
-            max-width: 600px;
-
-            margin: auto;
+            letter-spacing: 15px;
         }
+
 
         /* =====================================================
            SECTIONS
         ===================================================== */
 
         section {
-            padding: 80px 75px;
-
             position: relative;
 
-            border-top:
-                1px solid
-                rgba(224, 181, 91, 0.10);
+            padding:
+                80px
+                70px;
         }
 
-        section:nth-of-type(even) {
+        section:nth-child(even) {
             background:
                 rgba(255, 255, 255, 0.015);
         }
@@ -438,13 +441,13 @@
         .section-heading {
             text-align: center;
 
-            margin-bottom: 50px;
+            margin-bottom: 55px;
         }
 
         .section-number {
-            font-size: 10px;
+            font-size: 11px;
 
-            letter-spacing: 5px;
+            letter-spacing: 4px;
 
             color: #cfa654;
 
@@ -452,23 +455,32 @@
         }
 
         .section-heading h2 {
-            font-family: "Cormorant Garamond", serif;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-            font-size: 45px;
+            font-size: 48px;
 
             font-weight: 500;
+
+            line-height: 1.1;
 
             color: #f2d99c;
         }
 
         .section-heading .line {
             width: 90px;
+
             height: 1px;
 
-            margin: 15px auto 0;
+            margin:
+                18px
+                auto
+                0;
 
             background: #cba653;
         }
+
 
         /* =====================================================
            PERSONAL DETAILS
@@ -480,34 +492,31 @@
             grid-template-columns:
                 repeat(3, 1fr);
 
-            gap: 17px;
+            gap: 18px;
         }
 
         .detail-card {
+            padding: 28px;
+
             min-height: 95px;
 
             display: flex;
             flex-direction: column;
             justify-content: center;
 
-            padding: 22px;
-
             border:
                 1px solid
                 rgba(225, 184, 99, 0.18);
 
-            border-radius: 16px;
+            border-radius: 15px;
 
             background:
-                linear-gradient(
-                    145deg,
-                    rgba(255, 255, 255, 0.055),
-                    rgba(255, 255, 255, 0.015)
-                );
+                rgba(255, 255, 255, 0.035);
 
             transition:
                 transform 0.4s ease,
-                border 0.4s ease,
+                border-color 0.4s ease,
+                background 0.4s ease,
                 box-shadow 0.4s ease;
         }
 
@@ -517,11 +526,17 @@
             border-color:
                 rgba(225, 184, 99, 0.55);
 
+            background:
+                rgba(255, 255, 255, 0.07);
+
             box-shadow:
-                0 18px 40px rgba(0, 0, 0, 0.25);
+                0 15px 35px
+                rgba(0, 0, 0, 0.2);
         }
 
         .detail-card span {
+            display: block;
+
             color: #bb9860;
 
             font-size: 10px;
@@ -540,8 +555,9 @@
 
             line-height: 1.5;
 
-            color: #f4e6ca;
+            color: #f4ead7;
         }
+
 
         /* =====================================================
            ABOUT
@@ -552,9 +568,11 @@
 
             margin: auto;
 
-            padding: 50px 45px;
-
             text-align: center;
+
+            padding:
+                50px
+                45px;
 
             border-top:
                 1px solid
@@ -563,35 +581,12 @@
             border-bottom:
                 1px solid
                 rgba(220, 179, 90, 0.4);
-
-            position: relative;
-        }
-
-        .about-box::before,
-        .about-box::after {
-            content: "❖";
-
-            position: absolute;
-
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            color: #b9944d;
-
-            font-size: 14px;
-        }
-
-        .about-box::before {
-            left: 0;
-        }
-
-        .about-box::after {
-            right: 0;
         }
 
         .about-box .quote {
-            font-family: "Cormorant Garamond", serif;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
             font-size: 30px;
 
@@ -601,7 +596,7 @@
         }
 
         .about-box p {
-            margin-top: 25px;
+            margin-top: 22px;
 
             color: #cbb9a0;
 
@@ -610,64 +605,92 @@
             font-size: 14px;
         }
 
+
         /* =====================================================
            EDUCATION TIMELINE
+           DESKTOP
         ===================================================== */
 
         .timeline {
-            max-width: 780px;
-
-            margin: auto;
-
             position: relative;
+
+            width: 100%;
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            padding:
+                5px
+                0;
         }
+
+        /* Center line */
 
         .timeline::before {
             content: "";
 
             position: absolute;
 
-            left: 50%;
-
             top: 0;
             bottom: 0;
 
+            left: 50%;
+
             width: 1px;
+
+            transform:
+                translateX(-50%);
 
             background:
                 linear-gradient(
                     to bottom,
                     transparent,
-                    rgba(211, 171, 84, 0.5),
+                    rgba(211, 171, 84, 0.7) 8%,
+                    rgba(211, 171, 84, 0.7) 92%,
                     transparent
                 );
         }
 
         .timeline-item {
+            position: relative;
+
             width: 50%;
 
-            padding: 20px 40px;
+            min-height: 170px;
 
-            position: relative;
+            padding:
+                25px
+                45px;
         }
 
+        /* Left side */
+
         .timeline-item:nth-child(odd) {
+            margin-left: 0;
+
             text-align: right;
         }
 
+        /* Right side */
+
         .timeline-item:nth-child(even) {
             margin-left: 50%;
+
+            text-align: left;
         }
+
+        /* Timeline circle */
 
         .timeline-item::after {
             content: "";
 
             position: absolute;
 
-            top: 28px;
+            top: 31px;
 
-            width: 12px;
-            height: 12px;
+            width: 13px;
+            height: 13px;
 
             border:
                 2px solid
@@ -678,23 +701,41 @@
             background: #301020;
 
             box-shadow:
-                0 0 12px rgba(223, 186, 104, 0.35);
+                0 0 0 5px
+                rgba(223, 186, 104, 0.06),
+
+                0 0 15px
+                rgba(223, 186, 104, 0.25);
+
+            z-index: 2;
         }
+
+        /* Left circle */
 
         .timeline-item:nth-child(odd)::after {
-            right: -7px;
+            right: -8px;
         }
 
+        /* Right circle */
+
         .timeline-item:nth-child(even)::after {
-            left: -7px;
+            left: -8px;
         }
 
         .timeline-item h3 {
-            font-family: "Cormorant Garamond", serif;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-            font-size: 27px;
+            font-size: 30px;
+
+            font-weight: 600;
+
+            line-height: 1.15;
 
             color: #ebcf8e;
+
+            margin-bottom: 10px;
         }
 
         .timeline-item p {
@@ -707,8 +748,15 @@
             line-height: 1.6;
         }
 
+        .timeline-item p:first-of-type {
+            color: #e1d0b4;
+
+            font-weight: 500;
+        }
+
+
         /* =====================================================
-           PROFESSIONAL
+           PROFESSIONAL LIFE
         ===================================================== */
 
         .professional {
@@ -721,38 +769,26 @@
         }
 
         .pro-card {
-            padding: 38px;
+            padding: 35px;
 
-            border-radius: 22px;
-
-            border:
-                1px solid
-                rgba(222, 180, 90, 0.22);
+            border-radius: 20px;
 
             background:
                 linear-gradient(
                     145deg,
-                    rgba(255,255,255,0.065),
-                    rgba(255,255,255,0.015)
+                    rgba(255,255,255,0.07),
+                    rgba(255,255,255,0.02)
                 );
 
-            transition: 0.4s;
-        }
-
-        .pro-card:hover {
-            transform: translateY(-7px);
-
-            border-color:
-                rgba(222, 180, 90, 0.50);
-
-            box-shadow:
-                0 20px 45px rgba(0,0,0,0.25);
+            border:
+                1px solid
+                rgba(222, 180, 90, 0.22);
         }
 
         .pro-card span {
             color: #c5a05d;
 
-            font-size: 10px;
+            font-size: 11px;
 
             letter-spacing: 3px;
 
@@ -760,9 +796,11 @@
         }
 
         .pro-card h3 {
-            font-family: "Cormorant Garamond", serif;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-            font-size: 32px;
+            font-size: 31px;
 
             margin-top: 10px;
 
@@ -770,14 +808,15 @@
         }
 
         .pro-card p {
-            margin-top: 10px;
+            margin-top: 8px;
 
             color: #bfae9b;
 
             font-size: 13px;
 
-            line-height: 1.7;
+            line-height: 1.6;
         }
+
 
         /* =====================================================
            FAMILY
@@ -789,15 +828,17 @@
             grid-template-columns:
                 repeat(4, 1fr);
 
-            gap: 17px;
+            gap: 15px;
         }
 
         .family-card {
-            padding: 32px 18px;
+            padding:
+                30px
+                20px;
 
             text-align: center;
 
-            border-radius: 20px;
+            border-radius: 18px;
 
             background:
                 rgba(255,255,255,0.035);
@@ -806,17 +847,17 @@
                 1px solid
                 rgba(223,183,94,0.16);
 
-            transition: 0.4s;
+            transition:
+                transform 0.4s ease,
+                border-color 0.4s ease;
         }
 
         .family-card:hover {
-            transform: translateY(-7px);
+            transform:
+                translateY(-6px);
 
             border-color:
-                rgba(223,183,94,0.50);
-
-            background:
-                rgba(255,255,255,0.06);
+                rgba(223,183,94,0.5);
         }
 
         .family-icon {
@@ -828,9 +869,11 @@
         }
 
         .family-card h3 {
-            font-family: "Cormorant Garamond", serif;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-            font-size: 24px;
+            font-size: 23px;
 
             color: #ecd59f;
         }
@@ -845,6 +888,7 @@
             line-height: 1.5;
         }
 
+
         /* =====================================================
            HOBBIES
         ===================================================== */
@@ -856,24 +900,28 @@
 
             justify-content: center;
 
-            gap: 14px;
+            gap: 15px;
         }
 
         .hobby {
-            padding: 15px 25px;
+            padding:
+                15px
+                25px;
 
             border-radius: 50px;
 
             border:
                 1px solid
-                rgba(224,183,91,0.30);
+                rgba(224,183,91,0.3);
 
             background:
                 rgba(255,255,255,0.03);
 
             color: #e5d0a1;
 
-            transition: 0.35s;
+            transition:
+                transform 0.35s ease,
+                background 0.35s ease;
         }
 
         .hobby:hover {
@@ -884,6 +932,7 @@
                 translateY(-5px);
         }
 
+
         /* =====================================================
            VALUES
         ===================================================== */
@@ -893,28 +942,31 @@
         }
 
         .values blockquote {
-            font-family: "Cormorant Garamond", serif;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-            font-size: 45px;
+            font-size: 44px;
 
             line-height: 1.3;
 
             color: #f0d99f;
 
-            max-width: 850px;
+            max-width: 800px;
 
             margin: auto;
         }
 
         .values p {
-            margin-top: 25px;
+            margin-top: 20px;
 
             color: #baa894;
 
             font-size: 13px;
 
-            line-height: 1.8;
+            line-height: 1.7;
         }
+
 
         /* =====================================================
            PARTNER PREFERENCES
@@ -930,7 +982,9 @@
         }
 
         .preference {
-            padding: 23px 26px;
+            padding:
+                22px
+                25px;
 
             border-left:
                 2px solid
@@ -939,15 +993,17 @@
             background:
                 rgba(255,255,255,0.035);
 
-            transition: 0.3s;
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease;
         }
 
         .preference:hover {
             background:
-                rgba(255,255,255,0.065);
+                rgba(255,255,255,0.06);
 
             transform:
-                translateX(5px);
+                translateX(4px);
         }
 
         .preference span {
@@ -961,7 +1017,7 @@
 
             text-transform: uppercase;
 
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
         .preference strong {
@@ -969,10 +1025,9 @@
 
             color: #e6d5b4;
 
-            font-size: 14px;
-
             line-height: 1.5;
         }
+
 
         /* =====================================================
            CONTACT
@@ -983,34 +1038,30 @@
         }
 
         .contact-details {
-            display: grid;
+            display: flex;
 
-            grid-template-columns:
-                repeat(4, 1fr);
+            justify-content: center;
 
-            gap: 15px;
+            flex-wrap: wrap;
+
+            gap: 20px;
         }
 
         .contact-card {
-            padding: 25px 15px;
+            min-width: 200px;
+
+            padding:
+                22px
+                30px;
 
             border:
                 1px solid
                 rgba(225,181,89,0.22);
 
-            border-radius: 17px;
+            border-radius: 15px;
 
             background:
                 rgba(255,255,255,0.03);
-
-            transition: 0.35s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-
-            border-color:
-                rgba(225,181,89,0.5);
         }
 
         .contact-card span {
@@ -1018,29 +1069,30 @@
 
             color: #bd9856;
 
-            font-size: 9px;
+            font-size: 10px;
 
             letter-spacing: 2px;
 
-            margin-bottom: 9px;
+            margin-bottom: 8px;
         }
 
         .contact-card p {
-            font-size: 12px;
+            font-size: 13px;
 
             color: #dfd0b5;
 
             line-height: 1.5;
-
-            overflow-wrap: anywhere;
         }
+
 
         /* =====================================================
            FOOTER
         ===================================================== */
 
         footer {
-            padding: 55px 20px;
+            padding:
+                50px
+                20px;
 
             text-align: center;
 
@@ -1050,47 +1102,52 @@
         }
 
         footer .heart {
-            font-size: 28px;
+            font-size: 25px;
 
             color: #dfb967;
 
             margin-bottom: 15px;
-
-            animation: heartbeat 2s infinite;
-        }
-
-        @keyframes heartbeat {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.15);
-            }
         }
 
         footer p {
-            font-family: "Cormorant Garamond", serif;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-            font-size: 23px;
+            font-size: 22px;
 
             color: #d8c49d;
         }
 
+        footer small {
+            display: block;
+
+            margin-top: 10px;
+
+            color: #806e62;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+        }
+
+
         /* =====================================================
-           LAPTOP / TABLET
+           TABLET
         ===================================================== */
 
-        @media (max-width: 950px) {
+        @media (max-width: 900px) {
 
             .page {
-                width: min(100% - 25px, 900px);
+                margin: 15px auto;
+
+                padding: 10px;
             }
 
             section {
-                padding: 65px 45px;
+                padding:
+                    65px
+                    45px;
             }
 
             .details-grid {
@@ -1103,272 +1160,269 @@
                     repeat(2, 1fr);
             }
 
-            .contact-details {
-                grid-template-columns:
-                    repeat(2, 1fr);
+            .professional {
+                grid-template-columns: 1fr;
             }
+
+            .preferences {
+                grid-template-columns: 1fr;
+            }
+
         }
+
 
         /* =====================================================
            MOBILE
         ===================================================== */
 
-        @media (max-width: 650px) {
-
-            body {
-                background:
-                    radial-gradient(
-                        circle at 50% 10%,
-                        rgba(224, 179, 85, 0.15),
-                        transparent 28%
-                    ),
-                    radial-gradient(
-                        circle at 100% 60%,
-                        rgba(170, 55, 85, 0.18),
-                        transparent 30%
-                    ),
-                    linear-gradient(
-                        145deg,
-                        #1d0713,
-                        #350d1d,
-                        #16060f
-                    );
-            }
-
-            body::after {
-                font-size: 130px;
-            }
-
-            .flower1 {
-                font-size: 65px;
-                right: -10px;
-            }
-
-            .flower2 {
-                font-size: 75px;
-                left: -15px;
-            }
-
-            .flower3 {
-                font-size: 45px;
-            }
-
-            .flower4 {
-                display: none;
-            }
+        @media (max-width: 700px) {
 
             .page {
-                width: calc(100% - 14px);
+                width: 100%;
 
-                margin: 7px auto;
+                margin: 0 auto;
+
+                padding: 6px;
             }
 
             .profile {
-                border-radius: 20px;
+                border-radius: 18px;
             }
 
             .profile::before {
-                inset: 7px;
+                inset: 8px;
 
-                border-radius: 15px;
+                border-radius: 13px;
             }
 
-            /* ---------------- HERO ---------------- */
+
+            /* -------------------------------------------------
+               HERO
+            ------------------------------------------------- */
 
             .hero {
                 min-height: auto;
 
                 padding:
-                    65px 18px
-                    60px;
-            }
-
-            .hero::before {
-                width: 330px;
-                height: 330px;
+                    80px
+                    22px
+                    70px;
             }
 
             .small-title {
-                font-size: 9px;
+                font-size: 10px;
 
                 letter-spacing: 4px;
 
-                margin-bottom: 18px;
-            }
-
-            .ornament {
-                font-size: 19px;
-
-                letter-spacing: 8px;
+                margin-bottom: 22px;
             }
 
             .hero h1 {
                 font-size:
-                    clamp(43px, 13vw, 68px);
+                    clamp(
+                        48px,
+                        15vw,
+                        72px
+                    );
 
                 line-height: 0.95;
-
-                overflow-wrap: anywhere;
             }
 
             .hero-line {
                 width: 120px;
 
-                margin: 22px auto;
+                margin:
+                    25px
+                    auto;
             }
 
             .photo-wrapper {
-                width: 190px;
-                height: 235px;
+                width: 180px;
+                height: 225px;
 
-                margin: 27px auto;
+                margin:
+                    28px
+                    auto;
             }
 
             .subtitle {
                 font-size: 21px;
 
-                line-height: 1.35;
-
-                padding: 0 10px;
+                line-height: 1.4;
             }
 
-            /* ---------------- SECTIONS ---------------- */
+            .ornament {
+                font-size: 21px;
+
+                letter-spacing: 8px;
+            }
+
+
+            /* -------------------------------------------------
+               SECTIONS
+            ------------------------------------------------- */
 
             section {
                 padding:
-                    55px 18px;
+                    55px
+                    22px;
             }
 
             .section-heading {
-                margin-bottom: 32px;
+                margin-bottom: 38px;
             }
 
             .section-number {
-                font-size: 8px;
+                font-size: 9px;
 
                 letter-spacing: 3px;
             }
 
             .section-heading h2 {
-                font-size: 36px;
+                font-size:
+                    clamp(
+                        34px,
+                        10vw,
+                        44px
+                    );
             }
 
-            .section-heading .line {
-                width: 65px;
-            }
 
-            /* ---------------- PERSONAL ---------------- */
+            /* -------------------------------------------------
+               PERSONAL DETAILS
+            ------------------------------------------------- */
 
             .details-grid {
                 grid-template-columns: 1fr;
 
-                gap: 11px;
+                gap: 12px;
             }
 
             .detail-card {
-                min-height: auto;
+                padding: 21px;
 
-                padding: 18px 19px;
+                min-height: 85px;
             }
 
-            .detail-card span {
-                font-size: 9px;
 
-                letter-spacing: 1.5px;
-            }
-
-            .detail-card strong {
-                font-size: 13px;
-            }
-
-            /* ---------------- ABOUT ---------------- */
+            /* -------------------------------------------------
+               ABOUT
+            ------------------------------------------------- */
 
             .about-box {
                 padding:
-                    32px 22px;
-            }
-
-            .about-box::before,
-            .about-box::after {
-                display: none;
+                    35px
+                    15px;
             }
 
             .about-box .quote {
-                font-size: 24px;
+                font-size: 25px;
 
                 line-height: 1.45;
             }
 
             .about-box p {
-                font-size: 12px;
+                font-size: 13px;
 
                 line-height: 1.8;
             }
 
-            /* ---------------- EDUCATION ---------------- */
+
+            /* -------------------------------------------------
+               EDUCATION TIMELINE
+               MOBILE - ONE SIDE ONLY
+            ------------------------------------------------- */
 
             .timeline {
-                padding-left: 20px;
+                width: 100%;
+
+                padding:
+                    5px
+                    0;
             }
+
+            /* Vertical line on left */
 
             .timeline::before {
-                left: 7px;
+                left: 10px;
+
+                transform: none;
             }
 
+            /* Force ALL items to left */
+
             .timeline-item,
+            .timeline-item:nth-child(odd),
             .timeline-item:nth-child(even) {
+
                 width: 100%;
 
                 margin-left: 0;
 
                 padding:
-                    15px
-                    0
-                    25px
-                    30px;
+                    22px
+                    8px
+                    28px
+                    42px;
 
                 text-align: left;
+
+                min-height: auto;
             }
+
+            /* Force every circle to same position */
 
             .timeline-item::after,
             .timeline-item:nth-child(odd)::after,
             .timeline-item:nth-child(even)::after {
-                left: 1px;
+
+                left: 3px;
 
                 right: auto;
 
-                top: 23px;
+                top: 28px;
+
+                width: 14px;
+                height: 14px;
             }
 
             .timeline-item h3 {
-                font-size: 24px;
+                font-size: 28px;
+
+                line-height: 1.15;
+
+                margin-bottom: 8px;
             }
 
             .timeline-item p {
-                font-size: 11px;
+                font-size: 12px;
+
+                line-height: 1.6;
             }
 
-            /* ---------------- PROFESSIONAL ---------------- */
+
+            /* -------------------------------------------------
+               PROFESSIONAL
+            ------------------------------------------------- */
 
             .professional {
                 grid-template-columns: 1fr;
 
-                gap: 13px;
+                gap: 15px;
             }
 
             .pro-card {
-                padding: 27px 23px;
+                padding: 27px;
             }
 
             .pro-card h3 {
-                font-size: 27px;
+                font-size: 28px;
             }
 
-            .pro-card p {
-                font-size: 12px;
-            }
 
-            /* ---------------- FAMILY ---------------- */
+            /* -------------------------------------------------
+               FAMILY
+            ------------------------------------------------- */
 
             .family-grid {
                 grid-template-columns:
@@ -1379,13 +1433,8 @@
 
             .family-card {
                 padding:
-                    24px 10px;
-            }
-
-            .family-icon {
-                font-size: 25px;
-
-                margin-bottom: 9px;
+                    25px
+                    12px;
             }
 
             .family-card h3 {
@@ -1393,126 +1442,144 @@
             }
 
             .family-card p {
-                font-size: 10px;
+                font-size: 11px;
             }
 
-            /* ---------------- HOBBIES ---------------- */
+
+            /* -------------------------------------------------
+               HOBBIES
+            ------------------------------------------------- */
 
             .hobbies {
-                gap: 9px;
+                gap: 10px;
             }
 
             .hobby {
                 padding:
-                    12px 17px;
+                    12px
+                    18px;
 
-                font-size: 11px;
+                font-size: 12px;
             }
 
-            /* ---------------- VALUES ---------------- */
+
+            /* -------------------------------------------------
+               VALUES
+            ------------------------------------------------- */
 
             .values blockquote {
                 font-size: 31px;
 
-                line-height: 1.25;
+                line-height: 1.35;
             }
 
-            .values p {
-                font-size: 11px;
-            }
 
-            /* ---------------- PREFERENCES ---------------- */
+            /* -------------------------------------------------
+               PREFERENCES
+            ------------------------------------------------- */
 
             .preferences {
                 grid-template-columns: 1fr;
 
-                gap: 10px;
+                gap: 12px;
             }
 
             .preference {
                 padding:
-                    18px 20px;
+                    18px
+                    20px;
             }
 
-            .preference strong {
-                font-size: 12px;
-            }
 
-            /* ---------------- CONTACT ---------------- */
+            /* -------------------------------------------------
+               CONTACT
+            ------------------------------------------------- */
 
             .contact-details {
-                grid-template-columns: 1fr;
+                flex-direction: column;
 
-                gap: 10px;
+                align-items: stretch;
+
+                gap: 12px;
             }
 
             .contact-card {
+                min-width: 0;
+
+                width: 100%;
+
                 padding:
-                    18px 15px;
+                    20px;
             }
 
-            .contact-card p {
-                font-size: 11px;
-            }
 
-            /* ---------------- FOOTER ---------------- */
+            /* -------------------------------------------------
+               FOOTER
+            ------------------------------------------------- */
 
             footer {
                 padding:
-                    40px 15px;
+                    40px
+                    15px;
             }
 
             footer p {
                 font-size: 20px;
             }
+
         }
+
 
         /* =====================================================
            VERY SMALL PHONES
         ===================================================== */
 
-        @media (max-width: 380px) {
+        @media (max-width: 400px) {
 
             .hero {
                 padding:
-                    55px 14px
-                    50px;
+                    65px
+                    18px
+                    55px;
             }
 
             .hero h1 {
-                font-size: 40px;
+                font-size: 45px;
             }
 
             .photo-wrapper {
-                width: 170px;
-                height: 210px;
+                width: 165px;
+                height: 205px;
             }
 
             section {
                 padding:
-                    48px 14px;
+                    48px
+                    17px;
             }
 
             .section-heading h2 {
                 font-size: 32px;
             }
 
-            .family-card {
-                padding:
-                    20px 7px;
+            .timeline-item,
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 38px;
             }
 
-            .family-card h3 {
-                font-size: 19px;
+            .timeline-item h3 {
+                font-size: 25px;
             }
 
-            .family-card p {
-                font-size: 9px;
+            .family-grid {
+                grid-template-columns: 1fr;
             }
 
             .values blockquote {
-                font-size: 27px;
+                font-size: 28px;
             }
+
         }
 
     </style>
@@ -1522,13 +1589,12 @@
 <body>
 
     <!-- =====================================================
-         DECORATIONS
-    ====================================================== -->
+         FLOATING DECORATIONS
+    ===================================================== -->
 
     <div class="decoration flower1">❀</div>
     <div class="decoration flower2">✿</div>
     <div class="decoration flower3">✦</div>
-    <div class="decoration flower4">❖</div>
 
 
     <main class="page">
@@ -1538,7 +1604,7 @@
 
             <!-- =================================================
                  HERO
-            ================================================== -->
+            ================================================= -->
 
             <header class="hero">
 
@@ -1561,8 +1627,8 @@
                     <div class="photo-wrapper">
 
                         <img
-                            src="WhatsApp Image 2026-09-12 at 9.49.00 AM.jpeg"
-                            alt="Gunnala Meghana Reddy"
+                            src="WhatsApp Image 2026-09-12 at 9.49.00 AM (1).jpeg"
+                            alt="Profile Photo"
                         >
 
                     </div>
@@ -1582,7 +1648,7 @@
 
             <!-- =================================================
                  PERSONAL DETAILS
-            ================================================== -->
+            ================================================= -->
 
             <section>
 
@@ -1604,51 +1670,119 @@
                 <div class="details-grid">
 
                     <div class="detail-card">
-                        <span>Date of Birth</span>
-                        <strong>14 Feb 2003</strong>
-                    </div>
 
-                    <div class="detail-card">
-                        <span>Age</span>
-                        <strong>23 Years</strong>
-                    </div>
+                        <span>
+                            Date of Birth
+                        </span>
 
-                    <div class="detail-card">
-                        <span>Height</span>
-                        <strong>5'2"</strong>
-                    </div>
-
-                    <div class="detail-card">
-                        <span>Mother Tongue</span>
-                        <strong>Telugu</strong>
-                    </div>
-
-                    <div class="detail-card">
-                        <span>Religion</span>
-                        <strong>Hindu</strong>
-                    </div>
-
-                    <div class="detail-card">
-                        <span>Caste & Sub-Caste</span>
-                        <strong>Reddy, Motati (Namdari)</strong>
-                    </div>
-
-                    <div class="detail-card">
-                        <span>Nakshatra</span>
-                        <strong>Magha</strong>
-                    </div>
-
-                    <div class="detail-card">
-                        <span>Rasi</span>
-                        <strong>Simha</strong>
-                    </div>
-
-                    <div class="detail-card">
-                        <span>Location</span>
                         <strong>
-                            Yerraguntla, Kadapa,
-                            Andhra Pradesh
+                            14 Feb 2003
                         </strong>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <span>
+                            Age
+                        </span>
+
+                        <strong>
+                            23 Years
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <span>
+                            Height
+                        </span>
+
+                        <strong>
+                            5'2"
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <span>
+                            Mother Tongue
+                        </span>
+
+                        <strong>
+                            Telugu
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <span>
+                            Religion
+                        </span>
+
+                        <strong>
+                            Hindu
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <span>
+                            Caste and Sub-Caste
+                        </span>
+
+                        <strong>
+                            Reddy, Motati (Namdari)
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <span>
+                            Nakshatra
+                        </span>
+
+                        <strong>
+                            Magha
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <span>
+                            Rasi
+                        </span>
+
+                        <strong>
+                            Simha
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <span>
+                            Location
+                        </span>
+
+                        <strong>
+                            Yerraguntla, Kadapa, Andhra Pradesh
+                        </strong>
+
                     </div>
 
                 </div>
@@ -1658,7 +1792,7 @@
 
             <!-- =================================================
                  ABOUT
-            ================================================== -->
+            ================================================= -->
 
             <section>
 
@@ -1680,18 +1814,23 @@
                 <div class="about-box">
 
                     <div class="quote">
+
                         "A warm-hearted soul who believes
                         that life's greatest moments are
                         meant to be shared."
+
                     </div>
 
+
                     <p>
+
                         Meghana is a cheerful, compassionate and
                         family-oriented person. She values meaningful
                         relationships, continuous learning and living
                         life with gratitude. She enjoys discovering
                         new places, spending time with family and
                         pursuing her creative interests.
+
                     </p>
 
                 </div>
@@ -1701,7 +1840,7 @@
 
             <!-- =================================================
                  EDUCATION
-            ================================================== -->
+            ================================================= -->
 
             <section>
 
@@ -1722,6 +1861,9 @@
 
                 <div class="timeline">
 
+
+                    <!-- Bachelor's -->
+
                     <div class="timeline-item">
 
                         <h3>
@@ -1733,12 +1875,13 @@
                         </p>
 
                         <p>
-                            Amrita Vishwa Vidyapeetham ·
-                            2020–2024
+                            Amrita Vishwa Vidyapeetham · 2020–2024
                         </p>
 
                     </div>
 
+
+                    <!-- Master's -->
 
                     <div class="timeline-item">
 
@@ -1751,104 +1894,41 @@
                         </p>
 
                         <p>
-                            Amrita Vishwa Vidyapeetham ·
-                            2024–2026
+                            Amrita Vishwa Vidyapeetham · 2024–2026
                         </p>
 
                     </div>
 
+
+                    <!-- PhD -->
 
                     <div class="timeline-item">
 
                         <h3>
-                            PHD Degree
+                            PhD Degree
                         </h3>
 
                         <p>
-                            Amrita Vishwa Vidyapeetham ·
-                            Ongoing
+                            Amrita Vishwa Vidyapeetham · Ongoing
                         </p>
 
                     </div>
+
 
                 </div>
 
             </section>
-
-
-            <!-- =================================================
-                 PROFESSIONAL
-            ================================================== -->
-
-            <section>
-
-                <div class="section-heading">
-
-                    <div class="section-number">
-                        04 · CAREER
-                    </div>
-
-                    <h2>
-                        Professional Life
-                    </h2>
-
-                    <div class="line"></div>
-
-                </div>
-
-
-                <div class="professional">
-
-                    <div class="pro-card">
-
-                        <span>
-                            Profession
-                        </span>
-
-                        <h3>
-                            Software Engineer
-                        </h3>
-
-                        <p>
-                            Working in the technology industry
-                            with a passion for innovation and
-                            continuous learning.
-                        </p>
-
-                    </div>
-
-
-                    <div class="pro-card">
-
-                        <span>
-                            Organization
-                        </span>
-
-                        <h3>
-                            ABC Technologies
-                        </h3>
-
-                        <p>
-                            Hyderabad · Full Time
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </section>
-
 
             <!-- =================================================
                  FAMILY
-            ================================================== -->
+            ================================================= -->
 
             <section>
 
                 <div class="section-heading">
 
                     <div class="section-number">
-                        05 · ROOTS
+                        04 · ROOTS
                     </div>
 
                     <h2>
@@ -1861,6 +1941,7 @@
 
 
                 <div class="family-grid">
+
 
                     <div class="family-card">
 
@@ -1941,6 +2022,7 @@
 
                     </div>
 
+
                 </div>
 
             </section>
@@ -1948,14 +2030,14 @@
 
             <!-- =================================================
                  HOBBIES
-            ================================================== -->
+            ================================================= -->
 
             <section>
 
                 <div class="section-heading">
 
                     <div class="section-number">
-                        06 · INTERESTS
+                        05 · INTERESTS
                     </div>
 
                     <h2>
@@ -2000,14 +2082,14 @@
 
             <!-- =================================================
                  VALUES
-            ================================================== -->
+            ================================================= -->
 
             <section class="values">
 
                 <div class="section-heading">
 
                     <div class="section-number">
-                        07 · VALUES
+                        06 · VALUES
                     </div>
 
                     <h2>
@@ -2020,14 +2102,19 @@
 
 
                 <blockquote>
+
                     "Family, kindness, honesty
                     and growing together."
+
                 </blockquote>
 
+
                 <p>
+
                     She believes a beautiful relationship
                     is built on friendship, trust,
                     respect and understanding.
+
                 </p>
 
             </section>
@@ -2035,14 +2122,14 @@
 
             <!-- =================================================
                  PARTNER PREFERENCES
-            ================================================== -->
+            ================================================= -->
 
             <section>
 
                 <div class="section-heading">
 
                     <div class="section-number">
-                        08 · TOGETHER
+                        07 · TOGETHER
                     </div>
 
                     <h2>
@@ -2055,6 +2142,7 @@
 
 
                 <div class="preferences">
+
 
                     <div class="preference">
 
@@ -2133,6 +2221,7 @@
 
                     </div>
 
+
                 </div>
 
             </section>
@@ -2140,14 +2229,14 @@
 
             <!-- =================================================
                  CONTACT
-            ================================================== -->
+            ================================================= -->
 
             <section class="contact">
 
                 <div class="section-heading">
 
                     <div class="section-number">
-                        09 · CONNECT
+                        08 · CONNECT
                     </div>
 
                     <h2>
@@ -2160,6 +2249,7 @@
 
 
                 <div class="contact-details">
+
 
                     <div class="contact-card">
 
@@ -2207,11 +2297,11 @@
                         </span>
 
                         <p>
-                            Yerraguntla, Kadapa,
-                            Andhra Pradesh
+                            Yerraguntla, Kadapa, Andhra Pradesh
                         </p>
 
                     </div>
+
 
                 </div>
 
@@ -2220,7 +2310,7 @@
 
             <!-- =================================================
                  FOOTER
-            ================================================== -->
+            ================================================= -->
 
             <footer>
 
@@ -2231,6 +2321,10 @@
                 <p>
                     With love, hope & best wishes
                 </p>
+
+                <small>
+                    A BEAUTIFUL BEGINNING
+                </small>
 
             </footer>
 
